@@ -1,12 +1,8 @@
 <template>
   <div class="card">
-    <h2 class="item-name">Mew</h2>
-    <img
-      src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/151.png"
-      alt="mew picture"
-      class="item-img"
-    />
-    <h3 class="item-price">Priceless</h3>
+    <h2 class="item-name"><slot></slot></h2>
+    <img src="<slot></slot>" alt="picture" class="item-img" />
+    <h3 class="item-price"><slot></slot></h3>
   </div>
 </template>
 
@@ -18,15 +14,23 @@ export default {
 
 <style scoped>
 .card {
-  border: 1rem solid black;
-  width: fit-content;
+  border: 0.625rem solid black;
+  width: 23.125rem;
+  height: 23.125rem;
+  border-radius: 1.25rem;
 }
 .item-img {
-  position: none;
+  width: 18.75rem;
 }
 .item-name,
 .item-price {
   width: fit-content;
-  margin: 0;
+  margin: 0 auto;
+}
+.item-name {
+  margin-top: 0.313rem;
+}
+.item-price {
+  margin-top: 0.625rem;
 }
 </style>
