@@ -1,8 +1,8 @@
 <template>
   <div class="card">
-    <h2 class="item-name"><slot></slot></h2>
-    <img src="<slot></slot>" alt="picture" class="item-img" />
-    <h3 class="item-price"><slot></slot></h3>
+    <h2 class="item-name"><slot name="item-name"></slot></h2>
+    <img src="" alt="picture" class="item-img" />
+    <h3 class="item-price"><slot name="item-price"></slot></h3>
   </div>
 </template>
 
