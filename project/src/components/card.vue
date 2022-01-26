@@ -1,13 +1,18 @@
 <template>
   <div class="card">
-    <h2 class="item-name"><slot name="item-name"></slot></h2>
-    <img src="" alt="picture" class="item-img" />
-    <h3 class="item-price"><slot name="item-price"></slot></h3>
+    <h2 class="item-name">{{ title }}</h2>
+    <img src="" alt="" class="item-img" />
+    <h3 class="item-price">{{ description }}</h3>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    name: String,
+    img: String,
+    price: Number,
+  },
   name: "Card",
 };
 </script>

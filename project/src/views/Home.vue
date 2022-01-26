@@ -1,8 +1,6 @@
 <template>
   <div class="home">
-    <Card v-for="vanguard in vanguards" :key="vanguard">
-      {{ vanguard.name }}
-    </Card>
+    <Card v-for="vanguard in vanguards" :key="vanguard" title:vanguard.name />
   </div>
 </template>
 
