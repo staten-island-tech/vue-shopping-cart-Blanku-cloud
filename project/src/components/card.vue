@@ -1,31 +1,31 @@
 <template>
   <div class="card">
-    <h2 class="item-name">{{ title }}</h2>
-    <img src="" alt="" class="item-img" />
-    <h3 class="item-price">{{ description }}</h3>
+    <h2 class="item-name">{{ name }}</h2>
+    <img :src="image" alt="" class="item-img" />
+    <h3 class="item-price">{{ price }}</h3>
   </div>
 </template>
 
 <script>
 export default {
+  name: "Card",
   props: {
     name: String,
     img: String,
     price: Number,
   },
-  name: "Card",
 };
 </script>
 
 <style scoped>
 .card {
   border: 0.625rem solid black;
-  width: 23.125rem;
-  height: 23.125rem;
+  width: 26.125rem;
+  height: 26.125rem;
   border-radius: 1.25rem;
 }
 .item-img {
-  width: 18.75rem;
+  width: 55%;
 }
 .item-name,
 .item-price {
