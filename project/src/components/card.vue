@@ -2,17 +2,24 @@
   <div class="card">
     <h2 class="item-name">{{ name }}</h2>
     <img :src="img" alt="" class="item-img" />
-    <h3 class="item-price">${{ price }}</h3>
+    <div class="container">
+      <h3 class="item-price">${{ price }}</h3>
+      <Button class="button">ADD TO CART</Button>
+    </div>
   </div>
 </template>
 
 <script>
+import Button from "../components/button.vue";
 export default {
   name: "Card",
   props: {
     name: String,
     img: String,
     price: Number,
+  },
+  components: {
+    Button,
   },
 };
 </script>
@@ -37,5 +44,14 @@ export default {
 }
 .item-price {
   margin-top: 0.625rem;
+}
+
+.container {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-bottom: 0.625rem;
 }
 </style>
