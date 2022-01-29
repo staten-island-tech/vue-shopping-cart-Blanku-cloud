@@ -1,26 +1,22 @@
 <template>
   <div class="card">
     <h2 class="item-name">{{ name }}</h2>
-    <img :src="img" alt="" class="item-img" />
+    <img :src="image" alt="" class="item-img" />
     <div class="container">
       <h3 class="item-price">${{ price }}</h3>
-      <Button class="button">ADD TO CART</Button>
+      <span class="button-holder"><slot></slot></span>
     </div>
   </div>
 </template>
 
 <script>
-import Button from "../components/button.vue";
 export default {
-  name: "Card",
   props: {
     name: String,
-    img: String,
+    image: String,
     price: Number,
   },
-  components: {
-    Button,
-  },
+  components: {},
 };
 </script>
 

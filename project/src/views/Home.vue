@@ -1,24 +1,34 @@
 <template>
   <div class="home">
     <Card
-      v-for="vanguard in vanguards"
-      :key="vanguard.name"
+      v-for="(vanguard, index) in vanguards"
+      :key="index"
       :name="vanguard.name"
-      :img="vanguard.img"
+      :image="vanguard.img"
       :price="vanguard.price"
       class="card"
-    />
+      ><Button @button-click="addCard(index), follow(vanguard)"
+        >ADD TO CART</Button
+      ></Card
+    >
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Card from "../components/card.vue";
-
+import Button from "../components/button.vue";
 export default {
   name: "Home",
   data() {
     return {
+      cart: [
+        {
+          name: "Sealed Blaze Sword, Prithivih",
+          img: "https://s3-ap-northeast-1.amazonaws.com/en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dsd06/dsd06_001.png",
+          price: 90,
+        },
+      ],
       vanguards: [
         {
           name: "Sealed Blaze Sword, Prithivih",
@@ -70,6 +80,13 @@ export default {
   },
   components: {
     Card,
+    Button,
+  },
+  methods: {
+    addCard(index, vanguard) {
+      this.cart.push(index, vanguard);
+      vanguard.name, vanguard.img, vanguard.price;
+    },
   },
 };
 </script>
