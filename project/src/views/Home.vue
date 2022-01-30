@@ -7,9 +7,7 @@
       :image="vanguard.img"
       :price="vanguard.price"
       class="card"
-      ><Button @button-click="addCard(index), follow(vanguard)"
-        >ADD TO CART</Button
-      ></Card
+      ><Button @button-click="addCard(vanguard)">ADD TO CART</Button></Card
     >
   </div>
 </template>
@@ -22,13 +20,7 @@ export default {
   name: "Home",
   data() {
     return {
-      cart: [
-        {
-          name: "Sealed Blaze Sword, Prithivih",
-          img: "https://s3-ap-northeast-1.amazonaws.com/en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dsd06/dsd06_001.png",
-          price: 90,
-        },
-      ],
+      cart: [],
       vanguards: [
         {
           name: "Sealed Blaze Sword, Prithivih",
@@ -83,9 +75,12 @@ export default {
     Button,
   },
   methods: {
-    addCard(index, vanguard) {
-      this.cart.push(index, vanguard);
+    addCard(vanguard) {
+      this.cart.push(vanguard);
       vanguard.name, vanguard.img, vanguard.price;
+    },
+    props: {
+      cart: array,
     },
   },
 };
