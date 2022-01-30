@@ -16,11 +16,22 @@
 // @ is an alias to /src
 import Card from "../components/card.vue";
 import Button from "../components/button.vue";
+
 export default {
   name: "Home",
+  components: {
+    Card,
+    Button,
+  },
+  methods: {
+    addCard(vanguard) {
+      this.$store.commit("add", vanguard);
+      vanguard.name, vanguard.img, vanguard.price;
+    },
+  },
+
   data() {
     return {
-      cart: [],
       vanguards: [
         {
           name: "Sealed Blaze Sword, Prithivih",
@@ -69,19 +80,6 @@ export default {
         },
       ],
     };
-  },
-  components: {
-    Card,
-    Button,
-  },
-  methods: {
-    addCard(vanguard) {
-      this.cart.push(vanguard);
-      vanguard.name, vanguard.img, vanguard.price;
-    },
-    props: {
-      cart: array,
-    },
   },
 };
 </script>
