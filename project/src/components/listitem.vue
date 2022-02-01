@@ -1,9 +1,10 @@
 <template>
-  <div>
+  <div class="container">
     <div class="items">
       <img :src="image" alt="" class="img" />
       <h2 class="name">{{ name }}</h2>
       <h2 class="price">${{ price }}</h2>
+      <span class="button-holder"><slot></slot></span>
     </div>
   </div>
 </template>
@@ -24,6 +25,16 @@ export default {
 
 <style scoped>
 .img {
-  width: 10%;
+  width: 20%;
+}
+.items {
+  width: 70vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.name,
+.price {
+  margin-top: 0;
 }
 </style>

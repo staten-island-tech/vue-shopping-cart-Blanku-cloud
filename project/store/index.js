@@ -11,10 +11,22 @@ export default new Vuex.Store({
     add(state, payload) {
       state.cart.push(payload);
     },
+    remove(state, payload) {
+      state.cart.splice(payload, 1);
+    },
+    removeAll(state) {
+      state.cart = [];
+    },
   },
   actions: {
-    get({ commit }) {
+    add({ commit }) {
       commit("add");
+    },
+    remove({ commit }) {
+      commit("remove");
+    },
+    removeAll({ commit }) {
+      commit("removeAll");
     },
   },
 });
