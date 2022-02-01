@@ -10,7 +10,11 @@
     >
       <Button @button-click="removeCard(index)">Remove</Button>
     </listitem>
-    <Button v-if="false" @button-click="removeAll()">Remove All</Button>
+    <Button v-if="this.carts.length > 0" @button-click="removeAll()"
+      >Remove All</Button
+    >
+    <h2 v-if="this.carts.length === 0">Price: $0 (BUY SOMETHING PLZ)</h2>
+    <h2 v-if="this.carts.length > 0">Price: ${{ price }}</h2>
   </div>
 </template>
 
@@ -27,11 +31,12 @@ export default {
     carts() {
       return this.$store.state.cart;
     },
+    price() {
+      return this.$store.state.cart.price;
+    },
   },
   data() {
-    return {
-      haveItems: false,
-    };
+    return {};
   },
   methods: {
     removeCard(index) {
@@ -39,13 +44,6 @@ export default {
     },
     removeAll() {
       this.$store.commit("removeAll");
-    },
-    authState: function () {
-      if (this.$store.state.cart === 0) {
-        this.haveItems = false;
-      } else {
-        this.haveItems = true;
-      }
     },
   },
 };
