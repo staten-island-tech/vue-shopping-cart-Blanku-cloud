@@ -6,6 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     cart: [],
+    priceAll: [],
   },
   mutations: {
     add(state, payload) {
@@ -17,7 +18,12 @@ export default new Vuex.Store({
     removeAll(state) {
       state.cart = [];
     },
+    priceAll(state) {
+      const value = state.cart.price.reduce((a, b) => a + b, 0);
+      state.priceAll.push(value);
+    },
   },
+
   actions: {
     add({ commit }) {
       commit("add");
@@ -27,6 +33,9 @@ export default new Vuex.Store({
     },
     removeAll({ commit }) {
       commit("removeAll");
+    },
+    priceAll({ commit }) {
+      commit("priceAll");
     },
   },
 });
