@@ -7,9 +7,7 @@
       :image="vanguard.img"
       :price="vanguard.price"
       class="card"
-      ><Button @button-click="addCard(vanguard), calPrice()"
-        >ADD TO CART</Button
-      ></Card
+      ><Button @button-click="addCard(vanguard)">ADD TO CART</Button></Card
     >
   </div>
 </template>
@@ -29,9 +27,6 @@ export default {
     addCard(vanguard) {
       this.$store.commit("add", vanguard);
       vanguard.name, vanguard.img, vanguard.price;
-    },
-    calPrice() {
-      this.$store.commit("priceAll");
     },
   },
 
