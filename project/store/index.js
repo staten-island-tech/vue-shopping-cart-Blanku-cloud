@@ -6,10 +6,14 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     cart: [],
+    total: null,
   },
   mutations: {
     add(state, payload) {
       state.cart.push(payload);
+      state.total = state.cart.price.forEach(function (price) {
+        state.total += price;
+      });
     },
     remove(state, payload) {
       state.cart.splice(payload, 1);

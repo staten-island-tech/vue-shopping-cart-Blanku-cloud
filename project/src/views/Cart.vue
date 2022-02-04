@@ -8,7 +8,7 @@
       :price="cart.price"
       :image="cart.img"
     >
-      <Button @button-click="removeCard(index)">Remove</Button>this.carts.price
+      <Button @button-click="removeCard(index)">Remove</Button>
     </listitem>
     <Button v-if="this.carts.length > 0" @button-click="removeAll()"
       >Remove All</Button
@@ -30,9 +30,6 @@ export default {
   computed: {
     carts() {
       return this.$store.state.cart;
-    },
-    addAll() {
-      return this.carts.price.reduce((a, b) => a + b);
     },
   },
   data() {
