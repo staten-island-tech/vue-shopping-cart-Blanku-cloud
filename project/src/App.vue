@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/cart">Cart</router-link>
+      <router-link to="/cart">Cart ({{ this.carts.length }})</router-link>
     </div>
     <router-view />
   </div>
@@ -12,6 +12,11 @@
 export default {
   data() {
     return {};
+  },
+  computed: {
+    carts() {
+      return this.$store.state.cart;
+    },
   },
 };
 </script>
