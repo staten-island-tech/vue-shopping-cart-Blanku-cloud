@@ -14,7 +14,7 @@
       >Remove All</Button
     >
     <h2 v-if="this.carts.length === 0">Price: $0 (BUY SOMETHING PLZ)</h2>
-    <h2 v-if="this.carts.length > 0">Price: ${{ total }}</h2>
+    <h2 v-if="this.carts.length > 0">Price: ${{ sum }}</h2>
   </div>
 </template>
 
@@ -37,7 +37,7 @@ export default {
   },
   data() {
     return {
-      total: this.$store.state.total,
+      sum: this.$store.state.total,
     };
   },
   methods: {

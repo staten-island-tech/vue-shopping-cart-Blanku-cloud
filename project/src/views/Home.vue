@@ -9,7 +9,6 @@
       class="card"
       ><Button @button-click="addCard(vanguard)">ADD TO CART</Button></Card
     >
-    <h1>hello</h1>
   </div>
 </template>
 
