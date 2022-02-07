@@ -6,22 +6,23 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     cart: [],
-    total: null,
+    total: 0,
   },
   mutations: {
     add(state, payload) {
       state.cart.push(payload);
-      state.total = state.cart.price.forEach(function (price) {
-        state.total += price;
-      });
+      state.total = state.total + payload.price;
     },
     remove(state, payload) {
       state.cart.splice(payload, 1);
+      console.log(state.total);
+      state.total = state.total - payload.price;
     },
     removeAll(state) {
       state.cart = [];
     },
   },
+
   actions: {
     add({ commit }) {
       commit("add");
