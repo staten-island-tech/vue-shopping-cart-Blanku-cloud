@@ -15,8 +15,9 @@ export default new Vuex.Store({
     },
     remove(state, payload) {
       state.cart.splice(payload, 1);
-      console.log(state.total);
-      state.total = state.total - payload.price;
+      const price = payload.price;
+      state.total = state.total - price;
+      console.log(price);
     },
     removeAll(state) {
       state.cart = [];
