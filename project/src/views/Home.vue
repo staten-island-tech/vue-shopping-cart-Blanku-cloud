@@ -7,9 +7,9 @@
       :image="vanguard.img"
       :price="vanguard.price"
       class="card"
-      ><Button @button-click="addCard(vanguard)">ADD TO CART</Button></Card
+      ><Button @button-click="addToCart(vanguard)">ADD TO CART</Button></Card
     >
-    <h1>hello</h1>
+    <h1>Cart:{{ cart }}</h1>
   </div>
 </template>
 
@@ -29,10 +29,15 @@ export default {
       this.$store.commit("add", vanguard);
       vanguard.name, vanguard.img, vanguard.price;
     },
+    addToCart(vanguard) {
+      this.cart.push(vanguard.name);
+    },
   },
+  computed: {},
 
   data() {
     return {
+      cart: [],
       vanguards: [
         {
           name: "Sealed Blaze Sword, Prithivih",

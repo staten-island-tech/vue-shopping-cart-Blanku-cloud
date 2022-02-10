@@ -1,13 +1,8 @@
 <template>
   <div id="app">
     <div id="nav">
-<<<<<<< HEAD
       <router-link to="/">Home</router-link> |
       <router-link to="/cart">Cart ({{ this.carts.length }})</router-link>
-=======
-      <!--      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> -->
->>>>>>> parent of 071eddd (push)
     </div>
     <router-view />
   </div>
