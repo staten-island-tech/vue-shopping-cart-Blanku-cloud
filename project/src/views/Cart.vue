@@ -31,6 +31,9 @@ export default {
     carts() {
       return this.$store.state.cart;
     },
+    price() {
+      return this.$store.state.cart.price;
+    },
     total() {
       return this.$store.state.total;
     },
@@ -41,8 +44,8 @@ export default {
     };
   },
   methods: {
-    removeCard(index) {
-      this.$store.commit("remove", index);
+    removeCard(index, price) {
+      this.$store.commit("remove", index, price);
     },
     removeAll() {
       this.$store.commit("removeAll");
