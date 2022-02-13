@@ -31,18 +31,17 @@ export default {
     carts() {
       return this.$store.state.cart;
     },
-    price() {
-      return this.$store.state.cart.price;
-    },
     total() {
       return this.$store.state.total;
     },
+    sum() {
+      return this.$store.state.cart.reduce(
+        (total, vanguard) => total + vanguard.price,
+        0
+      );
+    },
   },
-  data() {
-    return {
-      sum: this.$store.state.total,
-    };
-  },
+
   methods: {
     removeCard(index, price) {
       this.$store.commit("remove", index, price);

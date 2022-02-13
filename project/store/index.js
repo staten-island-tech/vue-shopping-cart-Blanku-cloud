@@ -11,13 +11,9 @@ export default new Vuex.Store({
   mutations: {
     add(state, payload) {
       state.cart.push(payload);
-      state.total = state.total + payload.price;
     },
     remove(state, payload) {
       state.cart.splice(payload, 1);
-      const price = payload.price;
-      state.total = state.total - price;
-      console.log(price);
     },
     removeAll(state) {
       state.cart = [];
