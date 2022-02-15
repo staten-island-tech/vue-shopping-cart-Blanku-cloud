@@ -2,11 +2,24 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/cart">Cart ({{ this.carts.length }})</router-link>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {};
+  },
+  computed: {
+    carts() {
+      return this.$store.state.cart;
+    },
+  },
+};
+</script>
 
 <style>
 #app {
