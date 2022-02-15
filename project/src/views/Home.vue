@@ -17,7 +17,6 @@
 import Card from "../components/card.vue";
 import Button from "../components/button.vue";
 
-import Card from "../components/card.vue";
 export default {
   name: "Home",
   components: {
