@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-<<<<<<< Updated upstream
     <Card
       v-for="(vanguard, index) in vanguards"
       :key="index"
@@ -10,25 +9,18 @@
       class="card"
       ><Button @button-click="addCard(vanguard)">ADD TO CART</Button></Card
     >
-=======
-    <Card></Card>
->>>>>>> Stashed changes
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Card from "../components/card.vue";
-<<<<<<< Updated upstream
 import Button from "../components/button.vue";
 
-=======
->>>>>>> Stashed changes
 export default {
   name: "Home",
   components: {
     Card,
-<<<<<<< Updated upstream
     Button,
   },
   methods: {
@@ -89,8 +81,6 @@ export default {
         },
       ],
     };
-=======
->>>>>>> Stashed changes
   },
 };
 </script>
