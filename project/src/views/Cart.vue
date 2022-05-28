@@ -43,8 +43,8 @@ export default {
   },
 
   methods: {
-    removeCard(index, price) {
-      this.$store.commit("remove", index, price);
+    removeCard(index) {
+      this.$store.commit("remove", index);
     },
     removeAll() {
       this.$store.commit("removeAll");
